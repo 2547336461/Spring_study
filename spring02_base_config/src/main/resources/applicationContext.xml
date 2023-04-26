@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1.导入spring坐标spring-context. 对应版本时5.2.10.RELEASE-->
+    <!--2.配置bean-->
+    <!--bean标签配置bean
+    id属性表示给bean起名字
+    class标签表示给bean定义类型-->
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl"/>
+
+    <!--可以给bean用name标签定义多个名称用逗号 分号 或 空格分割-->
+    <!--scope标签可以定义bean的作用范围（singleton 为单例默认）
+    （prototype 为非单例）
+    效果就是创建出来的对象是否为同一个对象-->
+    <bean id="bookService" name="service service2 bookEbi" class="com.itheima.service.impl.BookServiceImpl" scope="prototype">
+        <!--7.配置service和dao的关系-->
+        <!--property标签表示配置当前bean的属性
+        name表示配置哪一个属性
+        ref表示参照哪一个bean-->
+        <property name="bookDao" ref="bookDao"/>
+    </bean>
+</beans>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="bookDao" class="com.itheima.dao.impl.BookDaoImpl">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>222</value>
+                <value>333</value>
+                <value>444</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>itcast</value>
+                <value>222</value>
+                <value>333</value>
+                <value>444</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>100</value>
+                <value>222</value>
+                <value>333</value>
+                <value>444</value>
+                <value>444</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="country" value="china"/>
+                <entry key="province" value="anhui"/>
+                <entry key="city" value="fuYang"/>
+                <entry key="country" value="china"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="country">china</prop>
+                <prop key="province">anhui</prop>
+                <prop key="city">123</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

@@ -7,11 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AppForAnnotation {
     public static void main(String[] args) {
-        //AnnotationConfigApplicationContext加载Spring配置类初始化Spring容器
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BookDao bookDao = (BookDao) ctx.getBean("bookDao");
+        BookDao bookDao = ctx.getBean(BookDao.class);
         System.out.println(bookDao);
-        //按类型获取bean
         BookService bookService = ctx.getBean(BookService.class);
         System.out.println(bookService);
     }

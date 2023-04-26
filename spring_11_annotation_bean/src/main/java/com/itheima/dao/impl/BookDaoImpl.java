@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 //@Component("bookDao")
 //@Repository：@Component衍生注解
 @Repository("bookDao")
+//@Controller
 public class BookDaoImpl implements BookDao {
     public void save() {
         System.out.println("book dao save ...");

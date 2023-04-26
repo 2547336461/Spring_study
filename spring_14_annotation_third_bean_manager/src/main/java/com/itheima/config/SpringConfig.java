@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("com.itheima")
-//@Import:导入配置信息
-@Import({JdbcConfig.class})
+@Import(JdbcConfig.class)
 public class SpringConfig {
+
 }

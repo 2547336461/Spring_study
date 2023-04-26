@@ -8,22 +8,22 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 @Repository
-//@Scope设置bean的作用范围
-@Scope("singleton")
-public class BookDaoImpl implements BookDao {
+@Scope("prototype") // 设置为生成对象非单例
+public class BookDaoImpl implements BookDao{
 
+    @Override
     public void save() {
         System.out.println("book dao save ...");
     }
-    //@PostConstruct设置bean的初始化方法
+
+    // 构造方法后
     @PostConstruct
     public void init() {
-        System.out.println("init ...");
+        System.out.println("init13 ...");
     }
-    //@PreDestroy设置bean的销毁方法
+    // 程序销毁前
     @PreDestroy
     public void destroy() {
         System.out.println("destroy ...");
     }
-
 }

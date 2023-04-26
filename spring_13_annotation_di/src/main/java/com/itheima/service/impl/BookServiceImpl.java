@@ -12,7 +12,7 @@ public class BookServiceImpl implements BookService {
     //@Autowired：注入引用类型，自动装配模式，默认按类型装配
     @Autowired
     //@Qualifier：自动装配bean时按bean名称装配
-    @Qualifier("bookDao")
+    @Qualifier("bookDao2")
     private BookDao bookDao;
 
     public void save() {

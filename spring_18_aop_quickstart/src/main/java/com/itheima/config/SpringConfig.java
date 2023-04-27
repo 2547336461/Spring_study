@@ -6,7 +6,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
 @ComponentScan("com.itheima")
-//开启注解开发AOP功能
+// 告诉spring程序中有用注解开发的AOP
 @EnableAspectJAutoProxy
 public class SpringConfig {
 }

@@ -29,7 +29,7 @@ public class MyAdvice {
     }
 
     //ProceedingJoinPoint：专用于环绕通知，是JoinPoint子类，可以实现对原始方法的调用
-//    @Around("pt()")
+    @Around("pt()")
     public Object around(ProceedingJoinPoint pjp) {
         Object[] args = pjp.getArgs();
         System.out.println(Arrays.toString(args));
@@ -44,13 +44,13 @@ public class MyAdvice {
     }
 
     //设置返回后通知获取原始方法的返回值，要求returning属性值必须与方法形参名相同
-    @AfterReturning(value = "pt()",returning = "ret")
+    //@AfterReturning(value = "pt()",returning = "ret")
     public void afterReturning(JoinPoint jp,String ret) {
         System.out.println("afterReturning advice ..."+ret);
     }
 
     //设置抛出异常后通知获取原始方法运行时抛出的异常对象，要求throwing属性值必须与方法形参名相同
-    @AfterThrowing(value = "pt()",throwing = "t")
+    //@AfterThrowing(value = "pt()",throwing = "t")
     public void afterThrowing(Throwable t) {
         System.out.println("afterThrowing advice ..."+t);
     }
